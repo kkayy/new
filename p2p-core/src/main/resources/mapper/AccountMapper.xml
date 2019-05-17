@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zl.p2p.mapper.AccountMapper">
+
+  <!--   <select id="queryByUsernameAndPassword" resultType="Logininfo">
+        select*from logininfo where username = #{username} 
+                and password = #{password}
+    </select> -->
+    
+      <insert id="insert" parameterType="com.zl.p2p.pojo.Account">
+      INSERT INTO `p2p`.`account` (
+  `id`,
+  `tradePassword`,
+  `usableAmount`,
+  `freezedAmount`,
+  `borrowLimitAmount`,
+  `version`,
+  `unReceiveInterest`,
+  `unReceivePrincipal`,
+  `unReturnAmount`,
+  `remainBorrowLimit`
+) 
+VALUES
+  (
+    #{id},
+    #{tradePassword},
+    #{usableAmount},
+    #{freezedAmount},
+    #{borrowLimitAmount},
+    #{version},
+    #{unReceiveInterest},
+    #{unReceivePrincipal},
+    #{unReturnAmount},
+    #{remainBorrowLimit}
+  )
+    	</insert>
+    	<select id="queryById" resultType="com.zl.p2p.pojo.Account">
+    	select * from Account where id=#{id}
+    	</select>
+</mapper>
+
+

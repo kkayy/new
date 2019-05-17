@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zl.p2p.mapper.UserinfoMapper">
+
+  <!--   <select id="queryByUsernameAndPassword" resultType="Logininfo">
+        select*from logininfo where username = #{username} 
+                and password = #{password}
+    </select> -->
+    
+      <insert id="insert" parameterType="com.zl.p2p.pojo.Userinfo">
+ INSERT INTO `p2p`.`userinfo` (
+  `id`,
+  `version`,
+  `bitState`,
+  `realName`,
+  `idNumber`,
+  `phoneNumber`,
+  `incomeGrade_id`,
+  `marriage_id`,
+  `kidCount_id`,
+  `educationBackground_id`,
+  `authScore`,
+  `houseCondition_id`,
+  `realauthid`,
+  `email`
+) 
+VALUES
+  (
+    #{id},
+    #{version},
+    #{bitState},
+    #{realName},
+    #{idNumber},
+    #{phoneNumber},
+    #{incomeGrade.id},
+    #{marriage.id},
+    #{kidCount.id},
+    #{educationBackground.id},
+    #{authScore},
+    #{houseCondition.id},
+    #{realauthid},
+    #{email}
+  )
+    </insert>
+    <select id="queryById" resultType="com.zl.p2p.pojo.Userinfo" >
+    select * from userinfo where id=#{id}
+    </select>
+</mapper>
+
+
