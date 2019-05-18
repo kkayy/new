@@ -6,7 +6,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.zl.p2p.pojo.Logininfo;
-
 import com.zl.p2p.pojo.VerifyCodeVo;
 /**
  * 封装获取session,以及往HttpSession存放数据
@@ -16,6 +15,7 @@ import com.zl.p2p.pojo.VerifyCodeVo;
 public class UserContext {
 	private static String USER_IN_SESSION = "logininfo";
 	private static String VERIFYCODE_IN_SESSION = "verifycodeInSession";
+    
 	/**
 	 * 获取HttpSession的方法
 	 */
@@ -31,7 +31,7 @@ public class UserContext {
 	public static void setCurrent(Logininfo logininfo){
 		getHttpSession().setAttribute(USER_IN_SESSION, logininfo);
 	}
-
+	
 	/**
 	 * 存放短信验证码
 	 */

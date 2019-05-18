@@ -25,7 +25,7 @@
                 var _this = $(this);
                 _this.attr("disabled",true);  //禁用
                 $.ajax({
-                    url:"/sendVerifyCode.do",
+                    url:"/p2p-website/sendVerifyCode.do",
                     type:"post",
                     dataType:"json",
                     data:{phoneNumber:$("#phoneNumber").val()},
@@ -271,7 +271,7 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="bindPhoneForm" method="post"
-						action="/bindPhone.do">
+						action="/p2p-website/bindPhone.do">
 						<div class="form-group">
 							<label for="phoneNumber" class="col-sm-2 control-label">手机号:</label>
 							<div class="col-sm-4">
@@ -311,7 +311,7 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal" id="bindEmailForm" method="post"
-						action="/sendEmail.do">
+						action="/p2p-website/sendEmail.do">
 						<div class="form-group">
 							<label for="email" class="col-sm-2 control-label">Email:</label>
 							<div class="col-sm-4">
